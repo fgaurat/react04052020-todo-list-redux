@@ -37,9 +37,10 @@ const data = [
     }
   ]
 const todos = (state=data,action) =>{
-    console.log(state,action)
+    console.log(state)
+    console.log(action)
 
-    return {todos : data}
+    return {todoList : data}
 }
 
 

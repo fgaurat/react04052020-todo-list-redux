@@ -12,26 +12,10 @@ import PropTypes from 'prop-types'
 
 
 function TodoList(props) {
-
+    console.log(props)
     return (
         <div>
-            <h1>TodoListRef</h1>
-            <TableContainer component={Paper}>
-                <Table>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>#</TableCell>
-                            <TableCell>title</TableCell>
-                            <TableCell>dueDate</TableCell>
-                            <TableCell>completed</TableCell>
-                            <TableCell>actions</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {props.todos.map(todo => <TodoItemRef key={todo.id} todo={todo}/>)}
-                    </TableBody>
-                </Table>
-            </TableContainer>
+           
             <h1>TodoListFunc</h1>
             <TableContainer component={Paper}>
                 <Table>
@@ -62,7 +46,6 @@ TodoList.propTypes = {
         dueDate: PropTypes.number.isRequired,
       }).isRequired
     ).isRequired,
-    onDeleteItem: PropTypes.func.isRequired
   }
 
 export default TodoList;
