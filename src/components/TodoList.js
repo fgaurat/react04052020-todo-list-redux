@@ -45,7 +45,7 @@ function TodoList(props) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {props.todos.map(todo => <TodoItemFunc key={todo.id} todo={todo} onDeleteItem={e => this.deleteTodo(todo)} />)}
+                        {props.todos.map(todo => <tr><td>{todo.id}</td></tr>)}
                     </TableBody>
                 </Table>
             </TableContainer>
