@@ -8,6 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import PropTypes from 'prop-types'
 
 
 function TodoList(props) {

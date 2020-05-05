@@ -12,11 +12,11 @@ import todos from './reducers/todos.reducer';
 const store = createStore(todos)
 
 ReactDOM.render(
-  <Provider store={store}>
-    <React.StrictMode>
+  <React.StrictMode>
+    <Provider store={store}>
       <App />
-    </React.StrictMode>
-  </Provider>,
+    </Provider>
+    </React.StrictMode>,
 
   document.getElementById('root')
 );
