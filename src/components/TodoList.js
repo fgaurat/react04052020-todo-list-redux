@@ -52,5 +52,16 @@ function TodoList(props) {
     )
 }
 
+TodoList.propTypes = {
+    todos: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        completed: PropTypes.bool.isRequired,
+        title: PropTypes.string.isRequired,
+        dueDate: PropTypes.number.isRequired,
+      }).isRequired
+    ).isRequired,
+    onDeleteItem: PropTypes.func.isRequired
+  }
 
 export default TodoList;
