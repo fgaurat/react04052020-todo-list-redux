@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoList from './TodoList';
 import { connect } from 'react-redux';
-import {deleteTodo} from '../actions'
+import {deleteTodo,loadTodos} from '../actions'
 
 const mapStateToProps = state => {
     return {

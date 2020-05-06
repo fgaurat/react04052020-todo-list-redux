@@ -7,8 +7,6 @@ export const updateTodoForm = (form) => ({ type: "UPDATE_FORM", payload: form })
 
 
 export const loadTodos = () =>{
-
-    
     
     return async (dispatch) =>{
         const response = await fetch('http://localhost:3300/todos')
