@@ -36,11 +36,17 @@ const data = [
       "dueDate": 1582620058000
     }
   ]
-const todos = (state=data,action) =>{
+const todos = (state= {todoList : data},action) =>{
     console.log(state)
     console.log(action)
-
-    return {todoList : data}
+    switch(action.type){
+      case 'DELETE_TODO':
+        const todo_to_delete = action.payload
+        state = {todoList: data.filter(todo=> todo_to_delete != todo?true:false)}
+        return state
+      default:
+        return state
+    }
 }
 
 

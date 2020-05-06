@@ -1,6 +1,5 @@
 import React from 'react';
 import TodoItemRef from './TodoItemRef'
-import TodoItemFunc from './TodoItemFunc'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableContainer from '@material-ui/core/TableContainer';
@@ -29,7 +28,7 @@ function TodoList(props) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {props.todos.map(todo => <TodoItemFunc todo = {todo}/>)}
+                        {props.todos.map(todo => <TodoItemRef todo = {todo} onDeleteItem={props.onDeleteItem}/>)}
                     </TableBody>
                 </Table>
             </TableContainer>
