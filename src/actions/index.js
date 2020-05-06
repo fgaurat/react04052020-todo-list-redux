@@ -1,10 +1,5 @@
-
-
-
-export const deleteTodo = (todo) => ({ type: "DELETE_TODO", payload: todo })
 export const addTodo = (todo) => ({ type: "ADD_TODO", payload: todo })
 export const updateTodoForm = (form) => ({ type: "UPDATE_FORM", payload: form })
-
 
 export const loadTodos = () =>{
     
@@ -16,3 +11,14 @@ export const loadTodos = () =>{
     }
 
 }
+
+export const deleteTodo = (todo) => {
+
+    return async (dispatch) => {
+        const url_delete = `http://localhost:3300/todos/${todo.id}`
+        await fetch(url_delete, { method: 'DELETE' })
+        dispatch(loadTodos())
+    }
+
+}
+
