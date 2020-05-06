@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import {deleteTodo} from '../actions'
 
 const mapStateToProps = state => {
-    console.log(state)
     return {
         todos: state.todoList
     }

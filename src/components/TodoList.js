@@ -12,6 +12,8 @@ import PropTypes from 'prop-types'
 
 function TodoList(props) {
     const todos = props.todos
+    console.log("TodoList",todos)
+    
     return (
         <div>
            

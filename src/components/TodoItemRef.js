@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 export default function TodoItemRef(props){
 
     const todo = props.todo
-
+    console.log("TodoItemRef",todo)
     return(<TableRow key={todo.id}>
         <TableCell>{todo.id}</TableCell>
         <TableCell>{todo.title}</TableCell>
