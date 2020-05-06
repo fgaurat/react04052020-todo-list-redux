@@ -6,11 +6,13 @@ import {deleteTodo} from '../actions'
 const mapStateToProps = state => {
     return {
         todos: state.todoList
+        
     }
 }
 
 const mapDispatchToProps = dispatch => ({
-    onDeleteItem: todo => dispatch(deleteTodo(todo))
+    onDeleteItem: todo => dispatch(deleteTodo(todo)),
+    loadTodos: _ => dispatch(loadTodos()),
 })
 
 const TodoListContainer = connect(mapStateToProps, mapDispatchToProps)(TodoList)

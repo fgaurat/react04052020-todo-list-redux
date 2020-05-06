@@ -10,32 +10,41 @@ import Paper from '@material-ui/core/Paper';
 import PropTypes from 'prop-types'
 
 
-function TodoList(props) {
-    const todos = props.todos
-    console.log("TodoList",todos)
+class TodoList extends React.Component{
+
+
+    componentDidMount(){
+        this.props.loadTodos();
+    }
+
+    render(){
+        const todos = this.props.todos
+        console.log("TodoList",todos)
+
+        return (
     
-    return (
-        <div>
-           
-            <h1>TodoListFunc</h1>
-            <TableContainer component={Paper}>
-                <Table>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>#</TableCell>
-                            <TableCell>title</TableCell>
-                            <TableCell>dueDate</TableCell>
-                            <TableCell>completed</TableCell>
-                            <TableCell>actions</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {props.todos.map(todo => <TodoItemRef key={todo.id} todo = {todo} onDeleteItem={props.onDeleteItem}/>)}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </div>
-    )
+            <div>
+               
+                <h1>TodoListFunc</h1>
+                <TableContainer component={Paper}>
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>#</TableCell>
+                                <TableCell>title</TableCell>
+                                <TableCell>dueDate</TableCell>
+                                <TableCell>completed</TableCell>
+                                <TableCell>actions</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {this.props.todos.map(todo => <TodoItemRef key={todo.id} todo = {todo} onDeleteItem={this.props.onDeleteItem}/>)}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </div>
+        )
+    }
 }
 
 TodoList.propTypes = {
