@@ -29,7 +29,7 @@ function TodoList(props) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {props.todos.map(todo => <tr><td>{todo.id}</td></tr>)}
+                        {props.todos.map(todo => <TodoItemFunc todo = {todo}/>)}
                     </TableBody>
                 </Table>
             </TableContainer>
@@ -46,6 +46,7 @@ TodoList.propTypes = {
         dueDate: PropTypes.number.isRequired,
       }).isRequired
     ).isRequired,
+    onDeleteItem:PropTypes.func.isRequired
   }
 
 export default TodoList;

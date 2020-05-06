@@ -9,6 +9,9 @@ const mapStateToProps = state => {
     }
 }
 
+const mapDispatchToProps = dispatch => ({
+    onDeleteItem: todo => dispatch(deleteTodo(todo))
+  })
 
 const TodoListContainer = connect(mapStateToProps)(TodoList)
 
