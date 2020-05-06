@@ -28,7 +28,7 @@ function TodoList(props) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {props.todos.map(todo => <TodoItemRef todo = {todo} onDeleteItem={props.onDeleteItem}/>)}
+                        {props.todos.map(todo => <TodoItemRef key={todo.id} todo = {todo} onDeleteItem={props.onDeleteItem}/>)}
                     </TableBody>
                 </Table>
             </TableContainer>

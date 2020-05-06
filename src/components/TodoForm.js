@@ -3,6 +3,7 @@ import React from 'react';
 function TodoForm(props){
 
         const todoForm = props.todoForm;
+        console.log(todoForm)
         return (
             <div>
                 <h1>TodoForm</h1>

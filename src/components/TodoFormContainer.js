@@ -1,21 +1,21 @@
 import React from 'react';
 import TodoForm from './TodoForm';
 import { connect } from 'react-redux';
-import {deleteTodo} from '../actions'
+import {updateTodoForm,addTodo} from '../actions'
 
 const mapStateToProps = state => {
-    console.log(state)
+    console.log(state.todoForm)
     return {
         todoForm: state.todoForm
     }
 }
 
 const mapDispatchToProps = dispatch => ({
-    handleChange: event => {
+    handleInputChange: event => {
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
-        return dispatch({type:'UPDATE_FORM',form_values:{[name]:value}})
+        return dispatch(updateTodoForm({[name]:value}))
     },        
     handleSubmit: event => {
         event.preventDefault();
@@ -25,8 +25,7 @@ const mapDispatchToProps = dispatch => ({
             dueDate:event.target.dueDate.value
         }
         dispatch(addTodo(todo))
-    },
-    handleInputChange: event => dispatch(deleteTodo(todo)),
+    }
 })
 
 const TodoFormContainer = connect(mapStateToProps, mapDispatchToProps)(TodoForm)

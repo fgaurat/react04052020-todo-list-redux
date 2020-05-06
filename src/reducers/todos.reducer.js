@@ -49,13 +49,16 @@ const todos = (state = { todoList: data,todoForm }, action) => {
   switch (action.type) {
     case 'ADD_TODO':
       const todo_to_push = action.payload
-      todoList = state.todoList
+      let todoList = state.todoList
       todoList.push(todo_to_push)
       state.todoList = todoList
       return state
     case 'DELETE_TODO':
       const todo_to_delete = action.payload
       state = { todoList: data.filter(todo => todo_to_delete != todo ? true : false) }
+      return state
+    case 'UPDATE_FORM':
+      console.log("UPDATE_FORM")
       return state
     default:
       return state
