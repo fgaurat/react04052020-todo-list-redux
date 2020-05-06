@@ -12,7 +12,7 @@ import PropTypes from 'prop-types'
 
 
 function TodoList(props) {
-    console.log(props)
+    const todos = props.todos
     return (
         <div>
            
